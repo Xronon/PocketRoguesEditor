@@ -1,0 +1,4 @@
+# build output and release archives
+bin/
+bin-test/
+dist/

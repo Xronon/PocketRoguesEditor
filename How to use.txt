@@ -1,0 +1,135 @@
+POCKET ROGUES EDITOR — how to use
+
+The program changes gold, heroes' skill points, attributes, skill levels and gear in
+Pocket Rogues. It never touches crystals.
+
+1. Close the game completely.
+   While the game is running, writing is not possible: on exit the game saves its own
+   numbers over the edit. The program sees this by itself — the bar at the top turns red
+   and the "Write to game" button goes grey.
+
+2. Start PocketRoguesEditor.exe.
+   The window shows what is in the game now. Change the numbers you need: changed fields
+   are highlighted. "All to 50" sets all four attributes of a hero to the game's limit.
+
+3. Press "Write to game". The program shows exactly what will change and asks for
+   confirmation. Before writing it always makes a backup.
+
+4. Start the game and check.
+
+LANGUAGE
+   The program speaks the game's language: Russian if the game is in Russian, English for
+   any other language. To change it by hand — "EN ▾" in the top right corner, next to the
+   sun/moon: "As in the game", English or Русский. The program restarts in the new language;
+   if there are unwritten edits, it asks first — they would be lost.
+   Names of heroes, skills, items and effects come from the game's own translation.
+
+SKILLS
+   The "Skills" section is below the attributes. The hero buttons are on top — press one.
+   Every hero has nine skills: three for each attack button ("Main", "Powerful",
+   "Special"), named as in the game.
+   * A skill level goes from 0 to 25. "All hero skills to 25" raises all nine at once.
+   * A starting skill (the first in each column) never goes below 1: the game counts it as
+     level 1 anyway.
+   * In the game itself a skill can only be raised up to the level of the hero's guild in the
+     camp. The editor allows up to 25 right away; the guild level is shown below the skills.
+   * You can edit several heroes' skills at once: a dot next to a hero's name means there are
+     unwritten edits. Everything is written together.
+
+GEAR
+   The "Gear…" button at the bottom of the main window. Heroes on top, the hero's items on
+   the left (worn and in the bag), editing of the chosen item on the right.
+   * Only a hero with a run in progress has items: one back in the fortress, or the one you
+     are standing with in the dungeon (the edit goes right into the floor's save, and the game
+     continues from it with the new items). A hero without a run has no starting gear in the
+     save at all — the game hands it out when a run starts, and then it can be edited. The Camp
+     and other special dungeon locations work too — in the location's own save. If after a
+     crash the game is about to restore the dungeon from its reserve copy, the window will not
+     allow editing and says why.
+   * Quality, as in the game, from low to high: common, unusual, ancient, epic, legendary.
+     Nothing in the game goes above legendary, rings included ("ancient" is the third step).
+     Quality decides how many effects the game keeps on an item: quality (common — 0,
+     legendary — 4) plus the item's built-in effects. The game cuts extra ones by itself, so the
+     program will not allow more: raise the quality first.
+   * Under every effect a grey line says what it does — the game's own text, with the number
+     of the chosen tier. Change the tier and the number changes. Under the "Add" list you can
+     see what the chosen effect gives.
+   * An effect's tier: 1 to 5, with its value next to it (for example "tier 5: 32").
+   * Remove an effect — the "Remove" button. Built-in effects cannot be removed: the game puts
+     them back itself.
+   * Add an effect: the list offers only effects the game itself can roll on this item.
+     Hover over an effect in the open list — a note next to it says what it does, with the
+     number of the tier it will be added at. A new effect goes straight to the highest tier —
+     it can be changed.
+   * A curse — the "Remove curse" button. The item stays the same, only the minus goes away.
+   * RINGS follow their own rules. A ring has points: quality + 2 (common — 2, legendary — 6).
+     Each effect costs as many points as its tier: a tier 1 effect costs 1 point, tier 5 —
+     5 points. So a legendary ring is, for example, six tier 1 effects, or one tier 5 and one
+     tier 1. Also: a ring cannot hold two effects of the same kind (all "+Strength",
+     "+Agility", "+Intelligence", "+Endurance" are one kind), and the game does not combine
+     some effects with each other — the program will not offer those. A new effect gets the
+     highest tier that fits into the points. A ring's built-in effect cannot be removed.
+   * Artifacts are view-only: their properties are built into the game, and the save only
+     says which artifact it is.
+   * "Restore the item as in the game" forgets the edits of one item. Everything is written
+     with "Write to game" in the gear window, with a backup, just like numbers.
+
+ADD, REPLACE, DELETE AN ITEM (the gear window, buttons below the list)
+   * Empty slots of the hero are listed too ("— empty —"). Slots locked by a building
+     ("— locked —"): rings open with the Jewelry workshop, the second and third artifact —
+     with the Artifacts workshop.
+   * "Add item…" — a new item into the bag. A chooser opens: kinds of items on the left
+     (your class's weapons by fighting style, off-hand, helmets, body armor, rings, artifacts,
+     consumables), the items of the kind on the right — weakest at the top, strongest at the
+     bottom, with armor or damage.
+     Other classes' weapons are in a collapsed branch at the bottom: the game never gives
+     them to this hero. Tested on a wizard: another class's weapon in the main hand works
+     (a bow shoots, a sword hits). A shield instead of a book in the off-hand cannot be taken
+     off with the button: drop it from the inventory — it leaves the hand — and pick it up
+     again: it lies in the bag like any other item.
+   * "Replace…" — for a worn item: the new one takes its place, the old one goes to the bag.
+     For an item in the bag: the new one takes its place, the old one is deleted. On an empty
+     slot the button is called "Put on…".
+   * "Delete" — remove an item from the bag for good.
+   * Gear and rings come LEGENDARY; effects are random, from those the game itself can roll
+     on the item, with tiers as on a dropped item (high tiers are rarer). A new item can be
+     adjusted right away on the right, like any other: tiers, effects.
+   * The bag holds as many items as the Warehouse allows. A full bag gives "The inventory is
+     full.": delete something or replace an item in the bag. A worn item cannot be replaced
+     while the bag is full — there is nowhere to put the old one.
+   * A unique item is not given twice: a hero can have only one.
+   * Some tier 2 and 3 items are missing from the list: the game writes them into the save
+     under another item's name, and after loading they turn into a different item or vanish
+     ("Gladius" turns into "Murderer"). Giving them is pointless.
+   * All this happens before "Write to game". Changed your mind — "Reset edits".
+   * The developers can remove specific items from the server. Items built by the game's
+     rules look like honest drops, but they see the whole cloud copy of the save.
+
+HOW TO UNDO
+   "Past edits…" lists all edits. Choose one and press "Restore as before this edit". If you
+   played after the edit, the program shows in advance which numbers will roll back. An undo
+   can be undone too.
+
+   As a last resort, the "Backups" folder holds full copies of the game's data (.reg files,
+   the latest 30). Double-clicking such a file restores the data without this program — but
+   everything at once, with all progress as of that moment.
+
+GOOD TO KNOW
+   * Skill points are the hero's shared pool: for attributes and for skills.
+   * An attribute never goes above 50 in the game, and the program will not allow more.
+   * Health cannot be raised this way: on loading the game cuts it to the maximum.
+     Raise Endurance instead — it raises the maximum itself.
+   * If you press "Load" in the game (a local or a cloud save), the game brings back the
+     numbers from that save, and the edit is lost.
+   * Once an hour the game server receives the totals of gold, points and attributes. The
+     developers see these numbers, and they can ban an account. Large edits stand out more.
+     Skill levels are not in that summary, but they are in the cloud copy of the save.
+   * Do not use edits in co-op: it is someone else's game too.
+
+FILES NEXT TO THE PROGRAM (created automatically)
+   Backups\         copies before every write, and the files used for undo
+   Edit log.txt     what was changed, when, and to what
+   Error log.txt    details if the program runs into something unexpected
+   settings.ini     theme (sun/moon in the top right corner) and language
+   If folders with Russian names already exist ("Резервные копии", "Журнал правок.txt"),
+   the program keeps using them, so nothing is lost when the language changes.

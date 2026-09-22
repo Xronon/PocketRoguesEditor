@@ -1,0 +1,10 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Windows scripts and sources keep CRLF in the working tree
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.cs  text eol=crlf
+
+# the catalog is built into the exe: keep it byte for byte
+*.tsv -text
